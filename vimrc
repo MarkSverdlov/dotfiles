@@ -6,10 +6,18 @@ set nocompatible
 nmap <silent> <leader>v :vsplit<cr>
 nmap <silent> <leader><leader> :split<cr>
 
+" enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <silent> <leader>a za
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
 " Enable filetype plugins
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -169,28 +177,28 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current pane
-map <leader>c :close<cr>
+map <silent> <leader>c :close<cr>
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+map <silent> <leader>bd :Bclose<cr>
 
 " Close all the buffers
-map <leader>ba :bufdo bd<cr>
+map <silent> <leader>ba :bufdo bd<cr>
 
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+map <silent> <leader>l :bnext<cr>
+map <silent> <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>tl :tabnext<cr>
-map <leader>th :tabprevious<cr>
+map <silent> <leader>tn :tabnew<cr>
+map <silent> <leader>to :tabonly<cr>
+map <silent> <leader>tc :tabclose<cr>
+map <silent> <leader>tm :tabmove
+map <silent> <leader>tl :tabnext<cr>
+map <silent> <leader>th :tabprevious<cr>
 
 " Let 'tt' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap <leader>tt :exe "tabn ".g:lasttab<CR>
+nmap <silent> <leader>tt :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " Specify the behavior when switching between buffers
@@ -234,13 +242,22 @@ endif
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <silent> <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+map <silent> <leader>sn ]s
+map <silent> <leader>sp [s
+map <silent> <leader>sa zg
+map <silent> <leader>s? z=
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Packages Settings and Binding
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <silent> <leader>f to open the filetree 
+nnoremap <silent> <leader>f :NERDTree<cr>
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
