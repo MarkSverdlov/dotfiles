@@ -6,6 +6,8 @@ set nocompatible
 nmap <silent> <leader>v :vsplit<cr>
 nmap <silent> <leader><leader> :split<cr>
 
+set textwidth=72
+
 " enable folding
 set foldmethod=indent
 set foldlevel=99
