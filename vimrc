@@ -15,7 +15,6 @@ set cursorline  " Highlights the current line in the editor.
 set splitbelow splitright  " Change the split screen behavior
 set title  " Show file title
 set guifont=hack_nerd_font:h11
-set cc=100  " Show at 80 column a border for good code style
 set ttyfast  " Speed up scrolling on vim
 
 let g:kite_supported_langauges = ['python', 'javascript']
