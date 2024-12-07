@@ -8,6 +8,18 @@ nmap <silent> <leader><leader> :split<cr>
 
 set textwidth=72
 
+set clipboard=unnamedplus " Enable the system clipboard
+set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu
+set cursorline  " Highlights the current line in the editor.
+
+set splitbelow splitright  " Change the split screen behavior
+set title  " Show file title
+set guifont=hack_nerd_font:h11
+set cc=100  " Show at 80 column a border for good code style
+set ttyfast  " Speed up scrolling on vim
+
+let g:kite_supported_langauges = ['python', 'javascript']
+
 " enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -255,9 +267,11 @@ map <silent> <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Packages Settings and Binding
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent> <leader>f to open the filetree 
-nnoremap <silent> <leader>f :NERDTree<cr>
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+let NERDTreeQuitOnOpen=1
+nnoremap <silent> <leader>f :NERDTreeToggle<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
