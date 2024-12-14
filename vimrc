@@ -1,5 +1,3 @@
-" Mine
-
 " vim-the-hard-way stuff
 set nocompatible
 let mapleader = "\<space>"
@@ -23,6 +21,10 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 inoremap <down> <nop>
 inoremap <up> <nop>
+
+" Mine
+" Make Y be consistent with C, etc...
+nnoremap Y y$
 
 nnoremap <silent> <leader>v :vsplit<cr>
 nnoremap <silent> <leader><leader> :split<cr>
@@ -176,6 +178,8 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
+" make sure that the shifting is rounded to number spaces divided by 4 when possible.
+set shiftround
 set tabstop=4
 
 " Linebreak on 500 characters
