@@ -3,8 +3,8 @@
 let mapleader = "\<space>"
 
 set nocompatible
-nmap <silent> <leader>v :vsplit<cr>
-nmap <silent> <leader><leader> :split<cr>
+nnoremap <silent> <leader>v :vsplit<cr>
+nnoremap <silent> <leader><leader> :split<cr>
 
 set textwidth=72
 
@@ -179,39 +179,39 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :nohl<cr>
+noremap <silent> <leader><cr> :nohl<cr>
 "
 " Might want to change it to <M-j> etc for compatibiliyy with tmux
 " bindings
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " Close the current pane
-map <silent> <leader>c :close<cr>
+noremap <silent> <leader>c :close<cr>
 
 " Close the current buffer
-map <silent> <leader>bd :Bclose<cr>
+noremap <silent> <leader>bd :Bclose<cr>
 
 " Close all the buffers
-map <silent> <leader>ba :bufdo bd<cr>
+noremap <silent> <leader>ba :bufdo bd<cr>
 
-map <silent> <leader>l :bnext<cr>
-map <silent> <leader>h :bprevious<cr>
+noremap <silent> <leader>l :bnext<cr>
+noremap <silent> <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
-map <silent> <leader>tn :tabnew<cr>
-map <silent> <leader>to :tabonly<cr>
-map <silent> <leader>tc :tabclose<cr>
-map <silent> <leader>tm :tabmove
-map <silent> <leader>tl :tabnext<cr>
-map <silent> <leader>th :tabprevious<cr>
+noremap <silent> <leader>tn :tabnew<cr>
+noremap <silent> <leader>to :tabonly<cr>
+noremap <silent> <leader>tc :tabclose<cr>
+noremap <silent> <leader>tm :tabmove
+noremap <silent> <leader>tl :tabnext<cr>
+noremap <silent> <leader>th :tabprevious<cr>
 
 " Let 'tt' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap <silent> <leader>tt :exe "tabn ".g:lasttab<CR>
+nnoremap <silent> <leader>tt :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " Specify the behavior when switching between buffers
@@ -255,13 +255,13 @@ endif
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <silent> <leader>ss :setlocal spell!<cr>
+noremap <silent> <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <silent> <leader>sn ]s
-map <silent> <leader>sp [s
-map <silent> <leader>sa zg
-map <silent> <leader>s? z=
+noremap <silent> <leader>sn ]s
+noremap <silent> <leader>sp [s
+noremap <silent> <leader>sa zg
+noremap <silent> <leader>s? z=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Packages Settings and Binding
@@ -319,5 +319,5 @@ set number
 set relativenumber
 
 " Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
