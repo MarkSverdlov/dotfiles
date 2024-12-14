@@ -291,7 +291,8 @@ noremap <silent> <leader>s? z=
 " => Packages Settings and Binding
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" TODO: check why it makes error on quitting NERDTree sometimes.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
 
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <leader>f :NERDTreeToggle<cr>
