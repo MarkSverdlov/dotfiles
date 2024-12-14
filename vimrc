@@ -31,7 +31,6 @@ nnoremap <silent> <leader><leader> :split<cr>
 
 set textwidth=72
 
-set clipboard=unnamedplus " Enable the system clipboard
 set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu
 set cursorline  " Highlights the current line in the editor.
 
