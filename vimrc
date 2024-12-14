@@ -1,8 +1,29 @@
 " Mine
 
-let mapleader = "\<space>"
-
+" vim-the-hard-way stuff
 set nocompatible
+let mapleader = "\<space>"
+let maplocalleader = "\\"
+
+inoremap <c-u> <esc>gUiwea
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+iabbrev adn and
+iabbrev tehn then
+iabbrev @@ marksve039@gmail.com
+iabbrev ssig Mark Sverdlov<cr>marksve039@gmail.com
+" Temporary binding until the button ` is fixed on my machine.
+inoremap <c-w> `
+nnoremap <c-w> `
+vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>
+inoremap jk <esc>
+"Temporary binding until I learn jk binding.
+inoremap <esc> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <down> <nop>
+inoremap <up> <nop>
+
 nnoremap <silent> <leader>v :vsplit<cr>
 nnoremap <silent> <leader><leader> :split<cr>
 
