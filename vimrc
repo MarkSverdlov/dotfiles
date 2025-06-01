@@ -141,7 +141,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme grubvox-matrial
 catch
 endtry
 
