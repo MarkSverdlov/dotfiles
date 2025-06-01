@@ -3,6 +3,14 @@ set nocompatible
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
+augroup filetype_options
+    autocmd!
+    autocmd Filetype html setlocal nowrap norelativenumber
+    autocmd Filetype markdown onoremap <buffer> ah :<c-u>execute "normal! ?^\\(-\\\|=\\)\\{2,}$\r:nohlsearch\rg_vk0"<cr>
+    autocmd Filetype markdown onoremap <buffer> ih :<c-u>execute "normal! ?^\\(-\\\|=\\)\\{2,}$\r:nohlsearch\rk0vg_"<cr>
+    autocmd Filetype python setlocal wrap number relativenumber
+augroup END
+
 inoremap <c-u> <esc>gUiwea
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
