@@ -3,6 +3,9 @@ set nocompatible
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
+onoremap in@ :<c-u>execute "normal! /\\<\\([a-zA-Z0-9]\\+\\)@[a-zA-Z]\\+\\.\\([a-zA-Z]\\.\\)\\?[a-zA-Z]\\+\\>\r:nohlsearch\rvE"<cr>
+
+
 augroup filetype_options
     autocmd!
     autocmd Filetype html setlocal nowrap norelativenumber
