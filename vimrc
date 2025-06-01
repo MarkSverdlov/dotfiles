@@ -277,7 +277,10 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    augroup cleantrailingspaces
+        autocmd!
+        autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    augroup END
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -295,9 +298,12 @@ noremap <silent> <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Packages Settings and Binding
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * NERDTree
-" TODO: check why it makes error on quitting NERDTree sometimes.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
+augroup NERDTree_options
+    autocmd!
+    autocmd vimenter * NERDTree
+    " TODO: check why it makes error on quitting NERDTree sometimes.
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
+augroup END
 
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <leader>f :NERDTreeToggle<cr>
