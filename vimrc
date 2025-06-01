@@ -10,9 +10,6 @@ iabbrev adn and
 iabbrev tehn then
 iabbrev @@ marksve039@gmail.com
 iabbrev ssig Mark Sverdlov<cr>marksve039@gmail.com
-" Temporary binding until the button ` is fixed on my machine.
-inoremap <c-w> `
-nnoremap <c-w> `
 vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>
 inoremap jk <esc>
 "Temporary binding until I learn jk binding.
