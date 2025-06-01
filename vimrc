@@ -3,6 +3,8 @@ set nocompatible
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
+set runtimepath=$HOME\.vim
+
 onoremap in@ :<c-u>execute "normal! /\\<\\([a-zA-Z0-9]\\+\\)@[a-zA-Z]\\+\\.\\([a-zA-Z]\\.\\)\\?[a-zA-Z]\\+\\>\r:nohlsearch\rvE"<cr>
 
 
