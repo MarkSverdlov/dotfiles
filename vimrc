@@ -51,7 +51,6 @@ if $COLORTERM == 'gnome-terminal'
 endif
 " }}}
 
-colorscheme grubvox-matrial
 
 " Leader Keys ---------------{{{
 let mapleader = "\<space>"
