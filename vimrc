@@ -155,7 +155,6 @@ augroup END
 
 augroup NERDTree_options
     autocmd!
-    autocmd vimenter * NERDTree
     " TODO: check why it makes error on quitting NERDTree sometimes.
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
 augroup END
