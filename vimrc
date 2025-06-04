@@ -68,8 +68,6 @@ set splitbelow splitright  " Change the split screen behavior
 set title  " Show file title
 set guifont=hack_nerd_font:h11
 set ttyfast  " Speed up scrolling on vim
-set foldmethod=indent
-set foldlevel=99
 set history=500
 set scrolloff=7  " Set the minimal number of screen lines to keep above and below the cursor
 set langmenu=en
