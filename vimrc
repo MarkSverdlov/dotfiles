@@ -1,4 +1,4 @@
-" Helper Functions
+" Helper Functions ---------------{{{
 
 function! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -35,8 +35,10 @@ function! HasPaste()
 endfunction
 
 command! Bclose call <SID>BufcloseCloseIt()
+" }}}
 
-" general options and customization
+
+" general options and customization ---------------{{{
 filetype on
 filetype plugin on
 filetype indent on
@@ -47,14 +49,17 @@ syntax enable
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
+" }}}
 
 colorscheme grubvox-matrial
 
-" Leader Keys
+" Leader Keys ---------------{{{
 let mapleader = "\<space>"
 let maplocalleader = "\\"
+" }}}
 
-" Options
+
+" Options ---------------{{{
 set nocompatible
 set textwidth=72
 set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu
@@ -108,6 +113,10 @@ set number
 set relativenumber
 set switchbuf=useopen,usetab,newtab
 set showtabline=2
+" }}}
+
+
+" autocommands ---------------{{{
 
 " autocommands
 augroup filetype_options
@@ -133,7 +142,10 @@ augroup NERDTree_options
 augroup END
 au TabLeave * let g:lasttab = tabpagenr()
 
-" remappings
+" }}}
+
+
+" remappings ---------------{{{
 onoremap in@ :<c-u>execute "normal! /\\<\\([a-zA-Z0-9]\\+\\)@[a-zA-Z]\\+\\.\\([a-zA-Z]\\.\\)\\?[a-zA-Z]\\+\\>\r:nohlsearch\rvE"<cr>
 inoremap <c-u> <esc>gUiwea
 nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -175,14 +187,19 @@ noremap <silent> <leader>sa zg
 noremap <silent> <leader>s? z=
 nnoremap <silent> <leader>f :NERDTreeToggle<cr>
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+" }}}
 
-" variable settings
+
+" variable settings ---------------{{{
 
 let g:lasttab = 1 " Useful for initialization of lasttab binding
-let NERDTreeQuitOnOpen=1  " NERDTree option
+let NERDTreeQuitOnOpen = 1  " NERDTree option
+" }}}
 
-" iabbrevations
+
+" iabbrevations ---------------{{{
 iabbrev adn and
 iabbrev tehn then
 iabbrev @@ marksve039@gmail.com
 iabbrev ssig Mark Sverdlov<cr>marksve039@gmail.com
+" }}}
