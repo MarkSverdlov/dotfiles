@@ -118,14 +118,32 @@ set showtabline=2
 
 " autocommands ---------------{{{
 
-" autocommands
-augroup filetype_options
+" Vimscript file settings --------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+augroup filetype_html
     autocmd!
     autocmd Filetype html setlocal nowrap norelativenumber
+augroup END
+
+augroup filetype_markdown
+    autocmd!
     autocmd Filetype markdown onoremap <buffer> ah :<c-u>execute "normal! ?^\\(-\\\|=\\)\\{2,}$\r:nohlsearch\rg_vk0"<cr>
     autocmd Filetype markdown onoremap <buffer> ih :<c-u>execute "normal! ?^\\(-\\\|=\\)\\{2,}$\r:nohlsearch\rk0vg_"<cr>
-    autocmd Filetype python setlocal wrap number relativenumber
 augroup END
+
+augroup filetype_python
+    autocmd!
+    autocmd Filetype python setlocal wrap number relativenumber
+    autocmd Filetype python iabbrev <buffer> ret return
+    autocmd Filetype python iabbrev <buffer> return NOPENOPENOPE
+    autocmd Filetype python setlocal foldmethod=indent foldlevel=99
+augroup END
+
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
