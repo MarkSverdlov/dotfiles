@@ -145,7 +145,10 @@ augroup filetype_python
 augroup END
 
 " Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup returntolasteditposition
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
 
 augroup cleantrailingspaces
     autocmd!
@@ -158,8 +161,11 @@ augroup NERDTree_options
     " TODO: check why it makes error on quitting NERDTree sometimes.
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
 augroup END
-au TabLeave * let g:lasttab = tabpagenr()
 
+augroup ontableave
+    autocmd!
+    autocomd TabLeave * let g:lasttab = tabpagenr()
+augroup END
 " }}}
 
 
