@@ -38,7 +38,7 @@ command! Bclose call <SID>BufcloseCloseIt()
 " }}}
 
 
-" general options and customization ---------------{{{
+" General Options And Customization ---------------{{{
 filetype on
 filetype plugin on
 filetype indent on
@@ -114,9 +114,9 @@ set foldlevelstart=0  " Make sure a buffer starts with all folds closed
 " }}}
 
 
-" autocommands ---------------{{{
+" Autocommands ---------------{{{
 
-" Vimscript file settings --------------- {{{
+" Vimscript File Settings --------------- {{{
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
@@ -163,7 +163,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 " }}}
 
 
-" remappings ---------------{{{
+" Remappings ---------------{{{
 onoremap in@ :<c-u>execute "normal! /\\<\\([a-zA-Z0-9]\\+\\)@[a-zA-Z]\\+\\.\\([a-zA-Z]\\.\\)\\?[a-zA-Z]\\+\\>\r:nohlsearch\rvE"<cr>
 inoremap <c-u> <esc>gUiwea
 nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -208,14 +208,14 @@ nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this
 " }}}
 
 
-" variable settings ---------------{{{
+" Variable Settings ---------------{{{
 
 let g:lasttab = 1 " Useful for initialization of lasttab binding
 let NERDTreeQuitOnOpen = 1  " NERDTree option
 " }}}
 
 
-" iabbrevations ---------------{{{
+" Iabbrevations ---------------{{{
 iabbrev adn and
 iabbrev tehn then
 iabbrev @@ marksve039@gmail.com
