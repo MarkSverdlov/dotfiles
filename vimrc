@@ -153,13 +153,6 @@ augroup cleantrailingspaces
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 augroup END
 
-augroup NERDTree_options
-    autocmd!
-    " TODO: check why it makes error on quitting NERDTree sometimes.
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
-augroup END
-au TabLeave * let g:lasttab = tabpagenr()
-
 " }}}
 
 
@@ -203,7 +196,6 @@ noremap <silent> <leader>sn ]s
 noremap <silent> <leader>sp [s
 noremap <silent> <leader>sa zg
 noremap <silent> <leader>s? z=
-nnoremap <silent> <leader>f :NERDTreeToggle<cr>
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 " }}}
 
@@ -211,7 +203,6 @@ nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this
 " Variable Settings ---------------{{{
 
 let g:lasttab = 1 " Useful for initialization of lasttab binding
-let NERDTreeQuitOnOpen = 1  " NERDTree option
 " }}}
 
 
@@ -220,4 +211,25 @@ iabbrev adn and
 iabbrev tehn then
 iabbrev @@ marksve039@gmail.com
 iabbrev ssig Mark Sverdlov<cr>marksve039@gmail.com
+" }}}
+
+
+" Package Options ---------------{{{
+" NERDTree Options
+augroup NERDTree_options
+    autocmd!
+    " TODO: check why it makes error on quitting NERDTree sometimes.
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
+augroup END
+
+nnoremap <silent> <leader>f :NERDTreeToggle<cr>
+
+let NERDTreeQuitOnOpen = 1  " NERDTree option
+
+
+" YouCompleteMe Options
+augroup YCM_options
+    autocmd!
+    autocmd FileType python packadd YouCompleteMe
+augroup END
 " }}}
