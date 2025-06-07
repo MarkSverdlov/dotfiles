@@ -228,8 +228,14 @@ let NERDTreeQuitOnOpen = 1  " NERDTree option
 
 
 " YouCompleteMe Options
+
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+
 augroup YCM_options
     autocmd!
     autocmd FileType python packadd YouCompleteMe
+    autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 augroup END
 " }}}
