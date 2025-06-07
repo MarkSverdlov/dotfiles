@@ -238,4 +238,8 @@ augroup YCM_options
     autocmd FileType python packadd YouCompleteMe
     autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 augroup END
+
+
+" Copilot Option.
+inoremap <silent><script><expr> <tab> copilot#Accept("\<CR>") " Use tab to accept suggestions from Copilot
 " }}}
