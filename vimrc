@@ -241,7 +241,7 @@ augroup END
 
 
 " Copilot Option.
-inoremap <silent><script><expr> <tab> copilot#Accept("\<CR>") " Use tab to accept suggestions from Copilot
+inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
 
 " Airline Options
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
