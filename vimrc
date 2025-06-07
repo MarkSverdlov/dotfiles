@@ -262,3 +262,8 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 " }}}
+
+
+" Color Schemes ---------------{{{
+colorscheme gruvbox
+" }}}
