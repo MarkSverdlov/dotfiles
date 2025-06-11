@@ -241,7 +241,13 @@ augroup END
 
 
 " Copilot Option.
-inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
+
+augroup copilot_options
+    autocmd!
+    autocmd FileType python,vim,tex packadd copilot.vim
+    autocmd FileType python,vim,tex inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
+augroup END
+
 
 " Airline Options
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
