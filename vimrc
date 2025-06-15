@@ -236,40 +236,48 @@ if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
 
-augroup YCM_options
-    autocmd!
-    autocmd FileType python packadd YouCompleteMe
-    autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-augroup END
+if !has('win32')
+    augroup YCM_options
+        autocmd!
+        autocmd FileType python packadd YouCompleteMe
+        autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+    augroup END
+endif
 
 
 " Copilot Option.
 
-augroup copilot_options
-    autocmd!
-    autocmd FileType python,vim,tex packadd copilot.vim
-    autocmd FileType python,vim,tex inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
-augroup END
-
+if !has('win32')
+    augroup copilot_options
+        autocmd!
+        autocmd FileType python,vim,tex packadd copilot.vim
+        autocmd FileType python,vim,tex inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
+    augroup END
+endif
 
 " Airline Options
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
-let g:airline_powerline_fonts = 1
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+if !has('win32')
+    let g:airline_powerline_fonts = 1
 endif
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.dirty='⚡'
+if !has('win32')
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.dirty='⚡'
+endif
 " }}}
 
 
