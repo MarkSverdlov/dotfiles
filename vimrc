@@ -155,7 +155,7 @@ augroup END
 
 augroup ctags_options
     autocmd!
-    autocmd BufWritePost * if &filetype != 'help' && &filetype != 'gitcommit' | silent! !ctags -R --exclude=.git --exclude=node_modules . | endif
+    autocmd BufWritePost * if &filetype != 'help' && &filetype != 'gitcommit' && filereadable("tags") | silent! !ctags -R --exclude=.git --exclude=node_modules . | endif
 " }}}
 
 
@@ -200,6 +200,7 @@ noremap <silent> <leader>sp [s
 noremap <silent> <leader>sa zg
 noremap <silent> <leader>s? z=
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+nnoremap <leader>T :!ctags -R --exclude=.git --exclude=node_module .<cr>
 " }}}
 
 
