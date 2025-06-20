@@ -208,10 +208,6 @@ nnoremap <silent> ]l :llast<cr>
 nnoremap <silent> [l :lfirst<cr>
 
 noremap <silent> <leader>ss :setlocal spell!<cr>
-noremap <silent> <leader>sn ]s
-noremap <silent> <leader>sp [s
-noremap <silent> <leader>sa zg
-noremap <silent> <leader>s? z=
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 nnoremap <leader>T :!ctags -R --exclude=.git --exclude=node_module .<cr>
 " }}}
