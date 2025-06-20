@@ -185,8 +185,28 @@ noremap <C-l> <C-W>l
 noremap <silent> <leader>c :close<cr>
 noremap <silent> <leader>bd :Bclose<cr>
 noremap <silent> <leader>ba :bufdo bd<cr>
-noremap <silent> <leader>l :bnext<cr>
-noremap <silent> <leader>h :bprevious<cr>
+" list mapping: b - bufferlist, t - taglist, a - argumentlist, c - quickfix list, l - location list.
+nnoremap <silent> ]b :bnext<cr>
+nnoremap <silent> [b :bprevious<cr>
+nnoremap <silent> ]B :blast<cr>
+nnoremap <silent> [B :bfirst<cr>
+nnoremap <silent> ]t :tnext<cr>
+nnoremap <silent> [t :tprevious<cr>
+nnoremap <silent> ]T :tlast<cr>
+nnoremap <silent> [T :tfirst<cr>
+nnoremap <silent> ]a :next<cr>
+nnoremap <silent> [a :previous<cr>
+nnoremap <silent> ]A :last<cr>
+nnoremap <silent> [A :first<cr>
+nnoremap <silent> ]q :cnext<cr>
+nnoremap <silent> [q :cprevious<cr>
+nnoremap <silent> ]q :clast<cr>
+nnoremap <silent> [q :cfirst<cr>
+nnoremap <silent> ]l :lnext<cr>
+nnoremap <silent> [l :lprevious<cr>
+nnoremap <silent> ]l :llast<cr>
+nnoremap <silent> [l :lfirst<cr>
+
 noremap <silent> <leader>ss :setlocal spell!<cr>
 noremap <silent> <leader>sn ]s
 noremap <silent> <leader>sp [s
