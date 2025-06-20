@@ -283,5 +283,6 @@ endif
 
 
 " Color Schemes ---------------{{{
+let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
 " }}}
