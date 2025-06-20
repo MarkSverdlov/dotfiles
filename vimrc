@@ -187,13 +187,6 @@ noremap <silent> <leader>bd :Bclose<cr>
 noremap <silent> <leader>ba :bufdo bd<cr>
 noremap <silent> <leader>l :bnext<cr>
 noremap <silent> <leader>h :bprevious<cr>
-noremap <silent> <leader>tn :tabnew<cr>
-noremap <silent> <leader>to :tabonly<cr>
-noremap <silent> <leader>tc :tabclose<cr>
-noremap <silent> <leader>tm :tabmove
-noremap <silent> <leader>tl :tabnext<cr>
-noremap <silent> <leader>th :tabprevious<cr>
-nnoremap <silent> <leader>tt :exe "tabn ".g:lasttab<CR>
 noremap <silent> <leader>ss :setlocal spell!<cr>
 noremap <silent> <leader>sn ]s
 noremap <silent> <leader>sp [s
