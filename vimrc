@@ -249,7 +249,7 @@ endif
 if !has('win32')
     augroup YCM_options
         autocmd!
-        autocmd FileType python packadd YouCompleteMe
+        autocmd FileType python,tex packadd YouCompleteMe
         autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
     augroup END
 endif
