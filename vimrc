@@ -288,6 +288,12 @@ if !has('win32')
     let g:airline_symbols.maxlinenr = ''
     let g:airline_symbols.dirty='⚡'
 endif
+
+" UltiSnips options
+let g:UltiSnipsExpandTrigger="<c-s>" |  " s for 'snippet'
+let g:UltiSnipsJumpForwardTrigger="<c-f>" |
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " }}}
 
 
