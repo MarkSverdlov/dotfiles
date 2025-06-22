@@ -200,12 +200,12 @@ nnoremap <silent> ]A :last<cr>
 nnoremap <silent> [A :first<cr>
 nnoremap <silent> ]q :cnext<cr>
 nnoremap <silent> [q :cprevious<cr>
-nnoremap <silent> ]q :clast<cr>
-nnoremap <silent> [q :cfirst<cr>
+nnoremap <silent> ]Q :clast<cr>
+nnoremap <silent> [Q :cfirst<cr>
 nnoremap <silent> ]l :lnext<cr>
 nnoremap <silent> [l :lprevious<cr>
-nnoremap <silent> ]l :llast<cr>
-nnoremap <silent> [l :lfirst<cr>
+nnoremap <silent> ]L :llast<cr>
+nnoremap <silent> [L :lfirst<cr>
 
 noremap <silent> <leader>ss :setlocal spell!<cr>
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
@@ -260,8 +260,8 @@ endif
 if !has('win32')
     augroup copilot_options
         autocmd!
-        autocmd FileType python,vim,tex packadd copilot.vim
-        autocmd FileType python,vim,tex inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
+        autocmd FileType python,vim packadd copilot.vim
+        autocmd FileType python,vim inoremap <silent><script><expr> <Tab> copilot#Accept("\<Tab>") " Use tab to accept suggestions from Copilot
     augroup END
 endif
 
