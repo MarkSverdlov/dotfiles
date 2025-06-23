@@ -35,6 +35,16 @@ function! HasPaste()
 endfunction
 
 command! Bclose call <SID>BufcloseCloseIt()
+
+
+function! s:TexFocusVim() abort
+    " Give window manage time to recognize focus moved to Zathura
+    sleep 200m
+
+    " Refocus Vim and redraw the screen
+    silent execute "!xdotool windowfocus " . expand(g:vim_window_id)
+    redraw!
+endfunction
 " }}}
 
 
@@ -297,6 +307,11 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " vimtex options
 let g:vimtex_view_method = 'zathura'
+" This autocommand make sure vim's focus is regained after forward search via vimtex.
+augroup vimtex_event_focus
+    autocmd!
+    autocmd User VimtexEventView call s:TexFocusVim()
+augroup END
 " }}}
 
 
@@ -309,5 +324,9 @@ colorscheme gruvbox
 " Infrastructure Configuration ---------------{{{
     if empty(v:servername) && exists('*remote_startserver') && !has('win32')
        call remote_startserver('VIM')
+    endif
+
+    if !exists("g:vim_window_id") && !has('win32')
+       let g:vim_window_id = system("xdotool getactivewindow")
     endif
 " }}}
