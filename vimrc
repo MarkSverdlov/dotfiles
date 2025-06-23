@@ -306,7 +306,7 @@ colorscheme gruvbox
 " }}}
 
 
-" Server Creation ---------------{{{
+" Infrastructure Configuration ---------------{{{
    if empty(v:servername) && exists('*remote_startserver') && !has('win32')
        call remote_startserver('VIM')
     endif
