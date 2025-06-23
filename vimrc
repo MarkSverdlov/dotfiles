@@ -294,6 +294,9 @@ let g:UltiSnipsExpandTrigger="<c-s>" |  " s for 'snippet'
 let g:UltiSnipsJumpForwardTrigger="<c-f>" |
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+" vimtex options
+let g:vimtex_view_method = 'zathura'
 " }}}
 
 
