@@ -301,3 +301,10 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
 " }}}
+
+
+" Server Creation ---------------{{{
+   if empty(v:servername) && exists('*remote_startserver') && !has('win32')
+       call remote_startserver('VIM')
+    endif
+" }}}
