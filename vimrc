@@ -304,6 +304,7 @@ let g:UltiSnipsExpandTrigger="<c-s>" |  " s for 'snippet'
 let g:UltiSnipsJumpForwardTrigger="<c-f>" |
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+nnoremap <silent> <leader>sn :<c-u>call UltiSnips#RefreshSnippets()<CR>
 
 " vimtex options
 let g:vimtex_view_method = 'zathura'
