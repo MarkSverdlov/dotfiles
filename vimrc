@@ -183,10 +183,10 @@ inoremap <down> <nop>
 inoremap <up> <nop>
 nnoremap Y y$
 nnoremap <silent> <leader>v :vsplit<cr>
-nnoremap <silent> <leader><leader> :split<cr>
+nnoremap <silent> <leader>h :split<cr>
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-noremap <silent> <leader><cr> :nohl<cr>
+noremap <silent> <leader><leader> :nohl<cr>
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
