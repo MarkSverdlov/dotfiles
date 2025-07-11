@@ -277,6 +277,7 @@ endif
 " Airline Options
 if !has('nvim')
     packadd vim-airline
+    packadd vim-airline-themes
     let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 
