@@ -75,4 +75,16 @@ vim.cmd("packadd vim-tpipeline")
 require('orgmode').setup {
     org_agenda_files = '~/orgfiles/**/*',
     org_default_notes_file = '~/orgfile/refile.org',
+    org_capture_templates = {
+        w = {
+            description = 'Websites',
+            template = '* %:description\n  %:link\n  %:date',
+            targets = "~/orgfiles/websites.org",
+        },
+        b = {
+            description = 'Books',
+            template = '* %:description\n  %:path\n  %:date',
+            targets = "~/orgfiles/books.org",
+        },
+    }
 }
