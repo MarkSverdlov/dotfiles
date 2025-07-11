@@ -1,5 +1,9 @@
+-- sourcing my vimrc
 local vimrc = "~/.vimrc"
 vim.cmd.source(vimrc)
+
+
+-- lualine.nvim
 vim.cmd("packadd lualine.nvim")
 require('lualine').setup {
     options = { theme = 'horizon' },
