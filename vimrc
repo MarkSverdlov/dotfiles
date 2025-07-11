@@ -329,7 +329,7 @@ colorscheme gruvbox
 
 
 " Infrastructure Configuration ---------------{{{
-    if empty(v:servername) && exists('*remote_startserver') && !has('win32')
+    if empty(v:servername) && exists('*remote_startserver') && !has('win32') && $TERM != 'linux'
        call remote_startserver('VIM')
     endif
 
