@@ -276,27 +276,30 @@ if !has('win32')
 endif
 
 " Airline Options
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
+if !has('nvim')
+    packadd vim-airline
+    let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+    let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 
-if !has('win32')
-    let g:airline_powerline_fonts = 1
-endif
-
-if !has('win32')
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
+    if !has('win32')
+        let g:airline_powerline_fonts = 1
     endif
 
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.dirty='⚡'
+    if !has('win32')
+        if !exists('g:airline_symbols')
+            let g:airline_symbols = {}
+        endif
+
+        let g:airline_left_sep = ''
+        let g:airline_left_alt_sep = ''
+        let g:airline_right_sep = ''
+        let g:airline_right_alt_sep = ''
+        let g:airline_symbols.branch = ''
+        let g:airline_symbols.readonly = ''
+        let g:airline_symbols.linenr = '☰'
+        let g:airline_symbols.maxlinenr = ''
+        let g:airline_symbols.dirty='⚡'
+    endif
 endif
 
 " UltiSnips options
