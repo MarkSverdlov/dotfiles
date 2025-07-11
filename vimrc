@@ -315,6 +315,10 @@ augroup vimtex_event_focus
     autocmd!
     autocmd User VimtexEventView call s:TexFocusVim()
 augroup END
+
+" Tabular options
+" mnemonic for align
+nnoremap <silent> <leader>a :Tabularize /<c-r>=input('Pattern: ')<cr><cr>
 " }}}
 
 
