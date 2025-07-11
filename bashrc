@@ -119,4 +119,8 @@ fi
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 
+
+alias vim=nvim
+
+
 source ~/.venv/bin/activate
