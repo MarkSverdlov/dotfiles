@@ -16,3 +16,6 @@ require('lualine').setup {
         lualine_z = {'tabs'}
     }
 }
+
+-- vim-tpipeline
+vim.cmd("packadd vim-tpipeline")
