@@ -5,6 +5,9 @@ vim.cmd.source(vimrc)
 
 -- lualine.nvim
 vim.cmd("packadd lualine.nvim")
+function time()
+    return os.date("%H:%M")
+end
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -59,7 +62,7 @@ require('lualine').setup {
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {},
+        lualine_y = {time},
         lualine_z = {'tabs'}
   },
   winbar = {},
