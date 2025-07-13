@@ -76,6 +76,12 @@ vim.cmd("packadd vim-tpipeline")
 
 -- orgmode
 require('orgmode').setup {
+    mappings = {
+        org = {
+            org_move_subtree_up = '<leader>k',
+            org_move_subtree_down = '<leader>j'
+        },
+    },
     org_agenda_files = '~/orgfiles/**/*',
     org_default_notes_file = '~/orgfile/refile.org',
     org_capture_templates = {
