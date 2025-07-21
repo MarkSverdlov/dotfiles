@@ -45,6 +45,28 @@ function! s:TexFocusVim() abort
     silent execute "!xdotool windowfocus " . expand(g:vim_window_id)
     redraw!
 endfunction
+
+
+func! VisualSelection(direction, extra_filter) range
+	let l:saved_reg = @"
+	exe "normal! vgvy"
+
+	let l:pattern = escape(@", '\\/.*$^~[]')
+	let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+	if a:direction == 'b'
+		exe "normal ?" . l:pattern . "^M"
+	elseif a:direction == 'gv'
+		call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
+	elseif a:direction == 'replace'
+		call CmdLine("%s" . '/'. l:pattern . '/')
+	elseif a:direction == 'f'
+		exe "normal /" . l:pattern . "^M"
+	endif
+
+	let @/ = l:pattern
+	let @" = l:saved_reg
+endf
 " }}}
 
 
