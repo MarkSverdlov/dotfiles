@@ -143,6 +143,8 @@ set relativenumber
 set switchbuf=useopen,usetab,newtab
 set showtabline=2
 set foldlevelstart=0  " Make sure a buffer starts with all folds closed
+set conceallevel=2
+set concealcursor=nc
 " }}}
 
 
