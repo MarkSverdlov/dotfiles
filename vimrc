@@ -143,8 +143,6 @@ set relativenumber
 set switchbuf=useopen,usetab,newtab
 set showtabline=2
 set foldlevelstart=0  " Make sure a buffer starts with all folds closed
-set conceallevel=2
-set concealcursor=nc
 " }}}
 
 
@@ -174,6 +172,12 @@ augroup filetype_python
     autocmd Filetype python iabbrev <buffer> ret return
     autocmd Filetype python iabbrev <buffer> return NOPENOPENOPE
     autocmd Filetype python setlocal foldmethod=indent foldlevel=99
+augroup END
+
+augroup filetype_org
+    autocmd!
+    autocmd FileType org setlocal conceallevel=2
+    autocmd FileType org setlocal concealcursor=nc
 augroup END
 
 " Return to last edit position when opening files (You want this!)
