@@ -1,0 +1,3 @@
+set selection-clipboard clipboard
+map [normal] w feedkeys ":bmark h<Return>"
+map [normal] e feedkeys ":blist h<Return>"
