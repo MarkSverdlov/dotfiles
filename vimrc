@@ -246,7 +246,7 @@ nnoremap <silent> [L :lfirst<cr>
 
 noremap <silent> <leader>ss :setlocal spell!<cr>
 nnoremap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-nnoremap <leader>t :!ctags -R --exclude=.git --exclude=node_module .<cr><cr>
+nnoremap <leader>t :!ctags -R --exclude=.git --exclude=node_module --exclude=site-packages .<cr><cr>
 " }}}
 
 
