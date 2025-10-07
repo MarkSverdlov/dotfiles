@@ -1,0 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/openwith")
+(require 'openwith)
+(openwith-mode t)
+(setq openwith-associations '(("\\.pdf\\'" "zathura" (file))))
+(setq org-refile-use-outline-path 'file)
