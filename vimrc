@@ -348,6 +348,10 @@ augroup END
 " Tabular options
 " mnemonic for align
 nnoremap <silent> <leader>a :Tabularize /<c-r>=input('Pattern: ')<cr><cr>
+
+" Ctrl-P options
+nnoremap <silent> <c-w> :CtrlP<cr>
+nnoremap <silent> <c-p> :CtrlPBuffer<cr>
 " }}}
 
 
