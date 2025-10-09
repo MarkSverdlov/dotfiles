@@ -14,3 +14,6 @@
 (openwith-mode 1)
 (setq org-refile-use-outline-path 'file)
 (global-set-key (kbd "C-c c") 'calendar)
+(setq calendar-latitude 32.1)
+(setq calendar-longitude 34.8)
+(setq calendar-location-name "Petah Tikva, Israel")
