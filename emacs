@@ -13,3 +13,4 @@
      ))
 (openwith-mode 1)
 (setq org-refile-use-outline-path 'file)
+(global-set-key (kbd "C-c c") 'calendar)
