@@ -253,6 +253,7 @@ nnoremap <leader>t :!ctags -R --exclude=.git --exclude=node_module --exclude=sit
 " Variable Settings ---------------{{{
 
 let g:lasttab = 1 " Useful for initialization of lasttab binding
+let g:python3_host_prog = '/home/mark/.venv/bin/python3' " Useful to set a Python3 program for neovim without relying on environment variables
 " }}}
 
 
