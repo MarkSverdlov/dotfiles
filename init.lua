@@ -97,3 +97,7 @@ require('orgmode').setup {
         },
     }
 }
+
+-- kitty-scrollback.nvim
+vim.cmd("packadd kitty-scrollback.nvim")
+require("kitty-scrollback").setup()
