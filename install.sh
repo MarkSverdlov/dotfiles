@@ -10,3 +10,4 @@ ln -s ~/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc 2> /dev/null || e
 ln -s ~/dotfiles/profile ~/.profile 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install profile"
 ln -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install kitty.conf"
 ln -sf ~/dotfiles/duckbones-theme.conf ~/.config/kitty/current-theme.conf 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install kitty theme"
+ln -s ~/dotfiles/ssh.conf ~/.ssh/config 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install ssh config"
