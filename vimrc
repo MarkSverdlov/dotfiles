@@ -277,22 +277,6 @@ nnoremap <silent> <leader>f :NERDTreeToggle<cr>
 
 let NERDTreeQuitOnOpen = 1  " NERDTree option
 
-
-" YouCompleteMe Options
-
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-
-if !has('win32')
-    augroup YCM_options
-        autocmd!
-        autocmd FileType python,tex packadd YouCompleteMe
-        autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-    augroup END
-endif
-
-
 " Copilot Option.
 
 if !has('win32')
