@@ -6,7 +6,7 @@ ln -s ~/dotfiles/chktexrc ~/.chktexrc 2> /dev/null || echo -e "\e[31mError\e[0m:
 ln -s ~/dotfiles/emacs ~/.emacs 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install emacs"
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install tmux.conf"
 ln -s ~/dotfiles/init.lua ~/.config/nvim/init.lua 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install nvim/init.lua"
-ln -s ~/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install zathura/zathurarc"
+ln -s ~/dotfiles/zathurarc ~/.config/zathura/zathurarc 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install zathura/zathurarc"
 ln -s ~/dotfiles/profile ~/.zprofile 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install profile"
 ln -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install kitty.conf"
 ln -sf ~/dotfiles/duckbones-theme.conf ~/.config/kitty/current-theme.conf 2> /dev/null || echo -e "\e[31mError\e[0m: Failed to install kitty theme"
