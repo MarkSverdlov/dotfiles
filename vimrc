@@ -180,6 +180,14 @@ augroup filetype_org
     autocmd FileType org setlocal concealcursor=nc
 augroup END
 
+augroup filetype_r
+    autocmd!
+    autocmd FileType r setlocal wrap number relativenumber
+    autocmd FileType r setlocal tabstop=2
+    autocmd FileType r setlocal shiftwidth=2
+augroup END
+
+
 " Return to last edit position when opening files (You want this!)
 augroup returntolasteditposition
     autocmd!
