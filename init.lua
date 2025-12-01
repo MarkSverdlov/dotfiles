@@ -153,11 +153,11 @@ matching = { disallow_symbol_nonprefix_matching = false }
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-vim.lsp.config('pyright', {
-capabilities = capabilities
+vim.lsp.config('pylsp', {
+capabilities = capabilities,
 })
 vim.lsp.config('lua_ls', {
 capabilities = capabilities
 })
-vim.lsp.enable('pyright')
+vim.lsp.enable('pylsp')
 vim.lsp.enable('lua_ls')
