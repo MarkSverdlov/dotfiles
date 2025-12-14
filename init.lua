@@ -177,7 +177,7 @@ iron.setup {
       sh = {
         -- Can be a table or a function that
         -- returns a table (see below)
-        command = {"zsh"}
+        command = {"bash"}
       },
       python = {
         command = { "ipython", "--no-autoindent"},
