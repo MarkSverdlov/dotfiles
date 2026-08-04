@@ -199,9 +199,6 @@ augroup cleantrailingspaces
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 augroup END
 
-augroup ctags_options
-    autocmd!
-    autocmd BufWritePost * if &filetype != 'help' && &filetype != 'gitcommit' && filereadable("tags") | silent! !ctags -R --exclude=.git --exclude=node_modules . | endif
 " }}}
 
 
