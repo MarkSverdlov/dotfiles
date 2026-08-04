@@ -343,7 +343,7 @@ augroup END
 nnoremap <silent> <leader>a :Tabularize /<c-r>=input('Pattern: ')<cr><cr>
 
 " Ctrl-P options
-nnoremap <silent> <c-w> :CtrlP<cr>
+nnoremap <silent> <nowait> <c-w> :CtrlP<cr>
 nnoremap <silent> <c-p> :CtrlPBuffer<cr>
 " }}}
 
