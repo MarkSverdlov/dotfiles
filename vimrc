@@ -337,6 +337,17 @@ augroup vimtex_event_focus
     autocmd!
     autocmd User VimtexEventView call s:TexFocusVim()
 augroup END
+let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_compiler_latexmk = {
+            \ 'options': [
+            \   '-verbose',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \   '-auxdir=.aux',
+            \   '-outdir=.',
+            \ ],
+            \}
 
 " Tabular options
 " mnemonic for align
