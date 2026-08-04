@@ -159,8 +159,12 @@ capabilities = capabilities,
 vim.lsp.config('lua_ls', {
 capabilities = capabilities
 })
+vim.lsp.config('texlab', {
+capabilities = capabilities
+})
 vim.lsp.enable('pylsp')
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('texlab')
 
 
 -- REPL windows
