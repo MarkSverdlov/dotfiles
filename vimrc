@@ -261,7 +261,7 @@ nnoremap <silent> <leader>1 :cclose<cr>
 " Variable Settings ---------------{{{
 
 let g:lasttab = 1 " Useful for initialization of lasttab binding
-let g:python3_host_prog = '/home/mark/.venv/bin/python3' " Useful to set a Python3 program for neovim without relying on environment variables
+let g:python3_host_prog = '/home/mark/.home-venv/bin/python3' " Useful to set a Python3 program for neovim without relying on environment variables
 " }}}
 
 
