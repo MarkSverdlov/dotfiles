@@ -259,3 +259,8 @@ iron.setup {
 -- iron also has a list of commands, see :h iron-commands for all available commands
 vim.keymap.set('n', '<localleader>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<localleader>rh', '<cmd>IronHide<cr>')
+
+-- guttermarks configuration
+require("guttermarks").setup {
+    global_mark = { enabled = false },
+}
