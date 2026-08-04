@@ -17,3 +17,4 @@
 (setq calendar-latitude 32.1)
 (setq calendar-longitude 34.8)
 (setq calendar-location-name "Petah Tikva, Israel")
+(setq inhibit-startup-screen t)
