@@ -1,10 +1,12 @@
+vim.pack.add { "https://github.com/morhetz/gruvbox" }
+
 -- sourcing my vimrc
 local vimrc = "~/.vimrc"
 vim.cmd.source(vimrc)
 
 
 -- lualine.nvim
-vim.cmd("packadd lualine.nvim")
+vim.pack.add{ "https://github.com/nvim-lualine/lualine.nvim" }
 function time()
     return os.date("%H:%M")
 end
@@ -70,11 +72,9 @@ require('lualine').setup {
   extensions = {}
 }
 
--- vim-tpipeline
-vim.cmd("packadd vim-tpipeline")
-
 
 -- orgmode
+vim.pack.add{ "https://github.com/nvim-orgmode/orgmode" }
 require('orgmode').setup {
     mappings = {
         org = {
@@ -99,60 +99,18 @@ require('orgmode').setup {
 }
 
 -- kitty-scrollback.nvim
-vim.cmd("packadd kitty-scrollback.nvim")
+vim.pack.add{ "https://github.com/mikesmithgh/kitty-scrollback.nvim" }
 require("kitty-scrollback").setup()
 
--- lsp servers
-
--- nvim.cmp
-local cmp = require'cmp'
-
-cmp.setup({
-snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-    vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-},
-window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-},
-mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-}),
-sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'ultisnips' }, -- For ultisnips users.
-}, {
-    { name = 'buffer' },
-})
-})
-
-cmp.setup.cmdline({ '/', '?' }, {
-mapping = cmp.mapping.preset.cmdline(),
-sources = {
-    { name = 'buffer' }
-}
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-mapping = cmp.mapping.preset.cmdline(),
-sources = cmp.config.sources({
-    { name = 'path' }
-}, {
-    { name = 'cmdline' }
-}),
-matching = { disallow_symbol_nonprefix_matching = false }
-})
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- blink.cmp
+vim.pack.add{ 'https://github.com/saghen/blink.lib',
+'https://github.com/saghen/blink.cmp'}
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+cmp.setup()
+local capabilities = cmp.get_lsp_capabilities()
 vim.lsp.config('pylsp', {
 capabilities = capabilities,
 })
@@ -168,6 +126,7 @@ vim.lsp.enable('texlab')
 
 
 -- REPL windows
+vim.pack.add{ "https://github.com/Vigemus/iron.nvim" }
 local iron = require("iron.core")
 local view = require("iron.view")
 local common = require("iron.fts.common")
@@ -261,6 +220,27 @@ vim.keymap.set('n', '<localleader>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<localleader>rh', '<cmd>IronHide<cr>')
 
 -- guttermarks configuration
+vim.pack.add { "https://github.com/dimtion/guttermarks.nvim" }
 require("guttermarks").setup {
     global_mark = { enabled = false },
 }
+
+
+vim.pack.add{ "https://github.com/github/copilot.vim",
+"https://github.com/dense-analysis/ale",
+"https://github.com/kien/ctrlp.vim",
+"https://github.com/rktjmp/lush.nvim",
+"https://github.com/preservim/nerdtree",
+"https://github.com/neovim/nvim-lspconfig",
+"https://github.com/tmhedberg/simpylfold",
+"https://github.com/godlygeek/tabular",
+"https://github.com/SirVer/ultisnips",
+"https://github.com/EgZvor/vim-black",
+"https://github.com/tpope/vim-commentary",
+"https://github.com/tpope/vim-dispatch",
+"https://github.com/tpope/vim-fugitive",
+"https://github.com/jeetsukumaran/vim-pythonsense",
+"https://github.com/tpope/vim-repeat",
+"https://github.com/tpope/vim-surround",
+"https://github.com/lervag/vimtex",
+"https://github.com/zenbones-theme/zenbones.nvim" }
