@@ -1,9 +1,18 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+
 vim.pack.add { "https://github.com/morhetz/gruvbox" }
 
 -- sourcing my vimrc
 local vimrc = "~/.vimrc"
 vim.cmd.source(vimrc)
 
+-- nvim-tree
+vim.pack.add{ "https://github.com/nvim-tree/nvim-web-devicons",
+"https://github.com/nvim-tree/nvim-tree.lua", }
+require("nvim-tree").setup()
+vim.keymap.set('n', '<leader>f', ':NvimTreeToggle<CR>', { desc = "Toggle NvimTree", silent = true })
 
 -- lualine.nvim
 vim.pack.add{ "https://github.com/nvim-lualine/lualine.nvim" }
@@ -105,13 +114,13 @@ require("kitty-scrollback").setup()
 
 -- Set up lspconfig.
 -- blink.cmp
-vim.pack.add{ 'https://github.com/saghen/blink.lib',
+vim.pack.add{ 'https://github.com/saghen/blink.lib', 
 'https://github.com/saghen/blink.cmp'}
 local cmp = require('blink.cmp')
 cmp.build():pwait()
 cmp.setup()
 local capabilities = cmp.get_lsp_capabilities()
-vim.lsp.config('pylsp', {
+vim.lsp.config('ty', {
 capabilities = capabilities,
 })
 vim.lsp.config('lua_ls', {
@@ -120,7 +129,7 @@ capabilities = capabilities
 vim.lsp.config('texlab', {
 capabilities = capabilities
 })
-vim.lsp.enable('pylsp')
+vim.lsp.enable('ty')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('texlab')
 
@@ -226,11 +235,10 @@ require("guttermarks").setup {
 }
 
 
-vim.pack.add{ "https://github.com/github/copilot.vim",
-"https://github.com/dense-analysis/ale",
+vim.pack.add{ "https://github.com/dense-analysis/ale",
 "https://github.com/kien/ctrlp.vim",
+"https://github.com/morhetz/gruvbox",
 "https://github.com/rktjmp/lush.nvim",
-"https://github.com/preservim/nerdtree",
 "https://github.com/neovim/nvim-lspconfig",
 "https://github.com/tmhedberg/simpylfold",
 "https://github.com/godlygeek/tabular",
@@ -244,3 +252,4 @@ vim.pack.add{ "https://github.com/github/copilot.vim",
 "https://github.com/tpope/vim-surround",
 "https://github.com/lervag/vimtex",
 "https://github.com/zenbones-theme/zenbones.nvim" }
+

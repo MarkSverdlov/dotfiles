@@ -274,16 +274,16 @@ iabbrev ssig Mark Sverdlov<cr>marksve039@gmail.com
 
 
 " Package Options ---------------{{{
-" NERDTree Options
-augroup NERDTree_options
-    autocmd!
-    " TODO: check why it makes error on quitting NERDTree sometimes.
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
-augroup END
+" " NERDTree Options
+" augroup NERDTree_options
+"     autocmd!
+"     " TODO: check why it makes error on quitting NERDTree sometimes.
+"     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
+" augroup END
 
-nnoremap <silent> <leader>f :NERDTreeToggle<cr>
+" nnoremap <silent> <leader>f :NERDTreeToggle<cr>
 
-let NERDTreeQuitOnOpen = 1  " NERDTree option
+" let NERDTreeQuitOnOpen = 1  " NERDTree option
 
 " Copilot Option.
 
